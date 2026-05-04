@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bud3nxcu3i5ao"]
+[gd_scene load_steps=26 format=3 uid="uid://bud3nxcu3i5ao"]
 
 [ext_resource type="Script" uid="uid://2ca7f06t0h2" path="res://nyra.gd" id="1_t50bl"]
 [ext_resource type="Script" uid="uid://ikj4xbk80oao" path="res://emotion.gd" id="2_2tvut"]
@@ -7,6 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://bp54p467woyfg" path="res://504641__fission9__underwater-ambience.wav" id="5_6kigf"]
 [ext_resource type="AudioStream" uid="uid://8edahbg4hmxp" path="res://435683__itsthatroboguy__underwater-crab-like-monster-growl.ogg" id="6_ephcv"]
 [ext_resource type="AudioStream" uid="uid://cxxyt305wkrmv" path="res://713696__cloud-10__scary-dystopian-submarine-ambient-shot.wav" id="7_kr4rq"]
+[ext_resource type="Texture2D" uid="uid://b8du02nk0pkpj" path="res://examples_dd3d/Ground104_1K-JPG/Ground104_1K-JPG_Color.jpg" id="11_hpbi1"]
+[ext_resource type="PackedScene" uid="uid://bq3v5qm00l1tc" path="res://examples_dd3d/Ground037_1K-JPG/coral.glb" id="11_l8hgk"]
+[ext_resource type="Texture2D" uid="uid://cm3imu35l4t8p" path="res://examples_dd3d/Ground104_1K-JPG/Ground104_1K-JPG_NormalGL.jpg" id="12_l8hgk"]
+[ext_resource type="PackedScene" uid="uid://dw5gr28sv7ox2" path="res://examples_dd3d/Ground037_1K-JPG/crescent_moon_coral.glb" id="13_67e8c"]
+[ext_resource type="Texture2D" uid="uid://cuf6cddld45xv" path="res://examples_dd3d/Ground104_1K-JPG/Ground104_1K-JPG_Roughness.jpg" id="13_ukfdr"]
+[ext_resource type="PackedScene" uid="uid://dvlg0y1m1v76k" path="res://examples_dd3d/Ground037_1K-JPG/coral_piece.glb" id="14_t6blv"]
 
 [sub_resource type="Environment" id="Environment_mrjun"]
 background_mode = 1
@@ -75,6 +81,15 @@ emission_energy_multiplier = 3.0
 material = SubResource("StandardMaterial3D_hgb1y")
 radius = 0.03
 height = 0.06
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6kigf"]
+size = Vector2(500, 300)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ys5ml"]
+albedo_texture = ExtResource("11_hpbi1")
+roughness_texture = ExtResource("13_ukfdr")
+normal_enabled = true
+normal_texture = ExtResource("12_l8hgk")
 
 [node name="Node3D" type="Node3D"]
 
@@ -150,3 +165,73 @@ lifetime = 8.0
 speed_scale = 0.3
 process_material = SubResource("ParticleProcessMaterial_b11yp")
 draw_pass_1 = SubResource("SphereMesh_4s5i7")
+
+[node name="Scenery" type="Node3D" parent="."]
+
+[node name="SeaFloor" type="MeshInstance3D" parent="Scenery"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 10, 3.71933e-05, -4.98615, -0.013120651)
+mesh = SubResource("PlaneMesh_6kigf")
+surface_material_override/0 = SubResource("StandardMaterial3D_ys5ml")
+
+[node name="Sketchfab_Scene" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -3, -3, -5)
+
+[node name="Sketchfab_Scene4" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.164357, -3, -2.7402835)
+
+[node name="Sketchfab_Scene5" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.664023, -3, -2.7402835)
+
+[node name="Sketchfab_Scene6" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.8031611, -3, -2.7402835)
+
+[node name="Sketchfab_Scene7" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.281682, -3, -1.1307113)
+
+[node name="Sketchfab_Scene8" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.101772, -3, -1.1307113)
+
+[node name="Sketchfab_Scene2" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4, -3, -5)
+
+[node name="Sketchfab_Scene9" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4, -3, -2.3417504)
+
+[node name="Sketchfab_Scene18" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4, -3, 3.3221714)
+
+[node name="Sketchfab_Scene19" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.9409037, -3, 3.3221714)
+
+[node name="Sketchfab_Scene20" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.8980093, -3, 3.3221714)
+
+[node name="Sketchfab_Scene10" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.391452, -3, -3.8003252)
+
+[node name="Sketchfab_Scene11" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.0889263, -3, -1.6502807)
+
+[node name="Sketchfab_Scene12" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.9575367, -3, -1.6502807)
+
+[node name="Sketchfab_Scene21" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.9575367, -3, 0.3210237)
+
+[node name="Sketchfab_Scene3" parent="Scenery" instance=ExtResource("14_t6blv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, -4)
+
+[node name="Sketchfab_Scene13" parent="Scenery" instance=ExtResource("14_t6blv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.669079, -2, -8.736016)
+
+[node name="Sketchfab_Scene17" parent="Scenery" instance=ExtResource("14_t6blv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6903934, -2, 2.7607164)
+
+[node name="Sketchfab_Scene14" parent="Scenery" instance=ExtResource("14_t6blv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80983, -2, -8.736016)
+
+[node name="Sketchfab_Scene15" parent="Scenery" instance=ExtResource("13_67e8c")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -11.110164, 0, 0)
+
+[node name="Sketchfab_Scene16" parent="Scenery" instance=ExtResource("13_67e8c")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10.927785, 0, 0)

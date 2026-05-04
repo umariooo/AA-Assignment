@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dvltla5kgis6s"
+path.s3tc="res://.godot/imported/modern_coral_2_1.jpg-f0da727aeec9fb1ef5aeb5feb6d616ec.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "ab74e74b553bc0d96f7e0923184ffe10"
+}
+
+[deps]
+
+source_file="res://examples_dd3d/Ground037_1K-JPG/modern_coral_2_1.jpg"
+dest_files=["res://.godot/imported/modern_coral_2_1.jpg-f0da727aeec9fb1ef5aeb5feb6d616ec.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

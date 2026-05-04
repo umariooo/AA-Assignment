@@ -3,6 +3,7 @@ extends MeshInstance3D
 @onready var bt = $BTRunner
 @onready var sound_ambient = $SoundAmbient
 @onready var sound_threatened = $SoundThreatened
+
 var last_emotion = -1
 
 var current_colour := Color(0.0,1.0,1.0)
