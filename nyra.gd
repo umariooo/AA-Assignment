@@ -7,7 +7,7 @@ extends MeshInstance3D
 var last_emotion = -1
 
 var current_colour := Color(0.0,1.0,1.0)
-@onready var body_material: StandardMaterial3D = get_active_material(0)
+@onready var body_material: ShaderMaterial = get_active_material(0)
 
 var velocity := Vector3.ZERO
 var max_speed := 3.0
@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	
 	var target_colour = get_emotion_colour()
 	current_colour = current_colour.lerp(target_colour, delta * 2.0)
-	body_material.emission = current_colour
+	body_material.set_shader_parameter("emission_color", current_colour)
 	
 	if emotion.current != last_emotion:
 		last_emotion = emotion.current
