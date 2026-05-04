@@ -15,11 +15,13 @@ var max_force := 2.0
 var mass := 1.0
 var wander_angle := 0.0
 var pulse_time := 0.0
-var show_debug := true
+var show_debug := false
 
 
 
-
+func _ready():
+	sound_ambient.play()
+	
 func _physics_process(delta: float) -> void:
 	bt.tick()
 	var cursor_pos = get_cursor_world_pos()
@@ -151,7 +153,7 @@ func get_emotion_colour() -> Color:
 		emotion.State.THREATENED:
 			return Color(0.8, 0.0, 0.5)
 		emotion.State.LONELY:
-			return Color(0.8, 0.9, 1.0)
+			return Color(0.898, 0.902, 1.0, 1.0)
 		emotion.State.SLEEPING:
 			return Color(0.0, 0.5, 0.4)
 	return Color(0.0,1.0,1.0)
