@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bud3nxcu3i5ao"]
+[gd_scene load_steps=27 format=3 uid="uid://bud3nxcu3i5ao"]
 
 [ext_resource type="Script" uid="uid://2ca7f06t0h2" path="res://nyra.gd" id="1_t50bl"]
 [ext_resource type="Script" uid="uid://ikj4xbk80oao" path="res://emotion.gd" id="2_2tvut"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cm3imu35l4t8p" path="res://examples_dd3d/Ground104_1K-JPG/Ground104_1K-JPG_NormalGL.jpg" id="12_l8hgk"]
 [ext_resource type="PackedScene" uid="uid://dw5gr28sv7ox2" path="res://examples_dd3d/Ground037_1K-JPG/crescent_moon_coral.glb" id="13_67e8c"]
 [ext_resource type="Texture2D" uid="uid://cuf6cddld45xv" path="res://examples_dd3d/Ground104_1K-JPG/Ground104_1K-JPG_Roughness.jpg" id="13_ukfdr"]
+[ext_resource type="Script" uid="uid://bkq1bjbvgtc7a" path="res://flock.gd" id="14_l8hgk"]
 [ext_resource type="PackedScene" uid="uid://dvlg0y1m1v76k" path="res://examples_dd3d/Ground037_1K-JPG/coral_piece.glb" id="14_t6blv"]
 
 [sub_resource type="Environment" id="Environment_mrjun"]
@@ -169,7 +170,7 @@ draw_pass_1 = SubResource("SphereMesh_4s5i7")
 [node name="Scenery" type="Node3D" parent="."]
 
 [node name="SeaFloor" type="MeshInstance3D" parent="Scenery"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 10, 3.71933e-05, -4.98615, -0.013120651)
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 10, 6.2356853, -6.1633987, 1.1203179)
 mesh = SubResource("PlaneMesh_6kigf")
 surface_material_override/0 = SubResource("StandardMaterial3D_ys5ml")
 
@@ -235,3 +236,6 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -11.110164, 0, 0)
 
 [node name="Sketchfab_Scene16" parent="Scenery" instance=ExtResource("13_67e8c")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10.927785, 0, 0)
+
+[node name="Flock" type="Node3D" parent="."]
+script = ExtResource("14_l8hgk")

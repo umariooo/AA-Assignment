@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2acngnljk0xe"]
+
+[ext_resource type="PackedScene" uid="uid://bsqrwvd016f6p" path="res://coral_fish.glb" id="1_hgn23"]
+[ext_resource type="Script" uid="uid://d38f2p8lbsok1" path="res://fish.gd" id="2_6ik3a"]
+
+[node name="Fish" type="Node3D"]
+
+[node name="Fish_model" parent="." instance=ExtResource("1_hgn23")]
+script = ExtResource("2_6ik3a")
