@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-Nyra is a bioluminescent artificial lifeform that drifts through a dark 2D void and interacts with the player through movement, emotion, and behaviour. Nyra appears to have a mind of its own. It observes the player's mouse movements and reacts using different emotional states such as curiosity, fear, contentment, and loneliness.
+Nyra is a bioluminescent artificial lifeform that drifts through a dark 3D void and interacts with the player through movement, emotion, and behaviour. Nyra appears to have a mind of its own. It observes the player's mouse movements and reacts using different emotional states such as curiosity, fear, contentment, and loneliness.
 
 These emotional states influence Nyra's movement patterns, colour, and behaviour. Nyra's brain is implemented using a Behavior Tree architecture, allowing it to autonomously choose actions based on environmental stimuli and player interaction.
 
