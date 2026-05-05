@@ -4,6 +4,7 @@ var velocity := Vector3.ZERO
 var max_speed := 2.5
 var max_force := 1.5
 
+#Applies a steering force to velocity and moves the fish, rotating it to face its direction of travel
 func apply_force(force: Vector3, delta: float):
 	velocity += force.limit_length(max_force) * delta
 	velocity = velocity.limit_length(max_speed)
