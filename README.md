@@ -54,3 +54,15 @@ Sound reinforces Nyra's emotional states.
 - Rhythmic tones while sleeping
 
 Sound pitch and intensity change depending on Nyra's emotional state.
+
+## What I Learned
+
+Working on this project, I learned how to implement boids into a godot project and how to use the DebugDraw addon to help with debugging.
+I also learned how to improve the visualisation of a standard sphere mesh by using a custom made gdshader script, that provides a unique look to the mesh. Additionaly, I improved my understanding of GDScript and was able to effectively use new features such as the "match" statement. I also gained an understanding into how external assets can be used and implemented in a Godot project. I used Sketchfab to download free to use assets, that I used to improve the aesthetic and atmosphere of the game.
+
+
+## Video Link
+
+
+
+
