@@ -1,0 +1,253 @@
+[gd_scene load_steps=29 format=3 uid="uid://bud3nxcu3i5ao"]
+
+[ext_resource type="Script" uid="uid://2ca7f06t0h2" path="res://nyra.gd" id="1_t50bl"]
+[ext_resource type="Shader" uid="uid://d3hf044wncrix" path="res://nyra.gdshader" id="1_ukfdr"]
+[ext_resource type="Script" uid="uid://ikj4xbk80oao" path="res://emotion.gd" id="2_2tvut"]
+[ext_resource type="Script" uid="uid://8psnkpmbbjsy" path="res://tentacle.gd" id="3_b11yp"]
+[ext_resource type="Script" uid="uid://bqcuwqku31j1g" path="res://bt_runner.gd" id="4_4s5i7"]
+[ext_resource type="AudioStream" uid="uid://bp54p467woyfg" path="res://504641__fission9__underwater-ambience.wav" id="5_6kigf"]
+[ext_resource type="AudioStream" uid="uid://8edahbg4hmxp" path="res://435683__itsthatroboguy__underwater-crab-like-monster-growl.ogg" id="6_ephcv"]
+[ext_resource type="AudioStream" uid="uid://cxxyt305wkrmv" path="res://713696__cloud-10__scary-dystopian-submarine-ambient-shot.wav" id="7_kr4rq"]
+[ext_resource type="Texture2D" uid="uid://b8du02nk0pkpj" path="res://examples_dd3d/Ground104_1K-JPG/Ground104_1K-JPG_Color.jpg" id="11_hpbi1"]
+[ext_resource type="PackedScene" uid="uid://bq3v5qm00l1tc" path="res://examples_dd3d/Ground037_1K-JPG/coral.glb" id="11_l8hgk"]
+[ext_resource type="Texture2D" uid="uid://cm3imu35l4t8p" path="res://examples_dd3d/Ground104_1K-JPG/Ground104_1K-JPG_NormalGL.jpg" id="12_l8hgk"]
+[ext_resource type="PackedScene" uid="uid://dw5gr28sv7ox2" path="res://examples_dd3d/Ground037_1K-JPG/crescent_moon_coral.glb" id="13_67e8c"]
+[ext_resource type="Texture2D" uid="uid://cuf6cddld45xv" path="res://examples_dd3d/Ground104_1K-JPG/Ground104_1K-JPG_Roughness.jpg" id="13_ukfdr"]
+[ext_resource type="Script" uid="uid://bkq1bjbvgtc7a" path="res://flock.gd" id="14_l8hgk"]
+[ext_resource type="PackedScene" uid="uid://dvlg0y1m1v76k" path="res://examples_dd3d/Ground037_1K-JPG/coral_piece.glb" id="14_t6blv"]
+
+[sub_resource type="Environment" id="Environment_mrjun"]
+background_mode = 1
+ambient_light_color = Color(0, 0.078431375, 0.15686275, 1)
+ambient_light_energy = 0.4
+glow_enabled = true
+glow_intensity = 1.5
+glow_bloom = 0.2
+fog_enabled = true
+fog_light_color = Color(0, 0.101960786, 0.18039216, 1)
+fog_density = 0.04
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrjun"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 1, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_t50bl"]
+material = SubResource("StandardMaterial3D_mrjun")
+radius = 0.8
+height = 1.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67e8c"]
+render_priority = 0
+shader = ExtResource("1_ukfdr")
+shader_parameter/emission_color = Color(0, 1, 1, 1)
+shader_parameter/emission_energy = 3.0
+shader_parameter/ripple_speed = 2.0
+shader_parameter/ripple_strength = 0.05
+
+[sub_resource type="SphereMesh" id="SphereMesh_2tvut"]
+radius = 0.18
+height = 0.36
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b11yp"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4s5i7"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 6.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_hgb1y"]
+material = SubResource("StandardMaterial3D_4s5i7")
+radius = 0.18
+height = 0.36
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b11yp"]
+emission_shape_scale = Vector3(10, 10, 10)
+emission_shape = 3
+emission_box_extents = Vector3(10, 10, 10)
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.39999998
+gravity = Vector3(0, 0, 0)
+scale_min = 0.049999997
+scale_max = 0.14999999
+color = Color(0, 0.6666667, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgb1y"]
+albedo_color = Color(0, 1, 0.8, 1)
+emission_enabled = true
+emission = Color(0, 0.8, 1, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_4s5i7"]
+material = SubResource("StandardMaterial3D_hgb1y")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6kigf"]
+size = Vector2(500, 300)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ys5ml"]
+albedo_texture = ExtResource("11_hpbi1")
+roughness_texture = ExtResource("13_ukfdr")
+normal_enabled = true
+normal_texture = ExtResource("12_l8hgk")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mrjun")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 2, 8)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+light_color = Color(0, 0.6666667, 1, 1)
+light_energy = 2.0
+omni_range = 8.0
+
+[node name="Nyra" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_t50bl")
+surface_material_override/0 = SubResource("ShaderMaterial_67e8c")
+script = ExtResource("1_t50bl")
+
+[node name="Emotion" type="Node3D" parent="Nyra"]
+script = ExtResource("2_2tvut")
+
+[node name="RightEye" type="MeshInstance3D" parent="Nyra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.3, 0.6)
+mesh = SubResource("SphereMesh_2tvut")
+surface_material_override/0 = SubResource("StandardMaterial3D_b11yp")
+
+[node name="LeftEye" type="MeshInstance3D" parent="Nyra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.3, 0.5)
+mesh = SubResource("SphereMesh_hgb1y")
+
+[node name="Tentacle1" type="Node3D" parent="Nyra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, -0.8, 0)
+script = ExtResource("3_b11yp")
+
+[node name="Tentacle2" type="Node3D" parent="Nyra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -0.9, 0)
+script = ExtResource("3_b11yp")
+
+[node name="Tentacle3" type="Node3D" parent="Nyra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+script = ExtResource("3_b11yp")
+
+[node name="Tentacle4" type="Node3D" parent="Nyra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -0.9, 0)
+script = ExtResource("3_b11yp")
+
+[node name="Tentacle5" type="Node3D" parent="Nyra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, -0.8, 0)
+script = ExtResource("3_b11yp")
+
+[node name="BTRunner" type="Node3D" parent="Nyra"]
+script = ExtResource("4_4s5i7")
+
+[node name="SoundAmbient" type="AudioStreamPlayer" parent="Nyra"]
+stream = ExtResource("5_6kigf")
+volume_db = -15.0
+autoplay = true
+
+[node name="SoundThreatened" type="AudioStreamPlayer" parent="Nyra"]
+stream = ExtResource("6_ephcv")
+volume_db = -5.0
+
+[node name="SoundAtmosphere" type="AudioStreamPlayer" parent="Nyra"]
+stream = ExtResource("7_kr4rq")
+volume_db = -20.0
+autoplay = true
+
+[node name="Plankton" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+amount = 200
+lifetime = 8.0
+preprocess = 5.0
+speed_scale = 0.3
+process_material = SubResource("ParticleProcessMaterial_b11yp")
+draw_pass_1 = SubResource("SphereMesh_4s5i7")
+
+[node name="Scenery" type="Node3D" parent="."]
+
+[node name="SeaFloor" type="MeshInstance3D" parent="Scenery"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 10, 6.2356853, -6.1633987, 1.1203179)
+mesh = SubResource("PlaneMesh_6kigf")
+surface_material_override/0 = SubResource("StandardMaterial3D_ys5ml")
+
+[node name="Sketchfab_Scene" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -3, -3, -5)
+
+[node name="Sketchfab_Scene4" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.164357, -3, -2.7402835)
+
+[node name="Sketchfab_Scene5" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.664023, -3, -2.7402835)
+
+[node name="Sketchfab_Scene6" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.8031611, -3, -2.7402835)
+
+[node name="Sketchfab_Scene7" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.281682, -3, -1.1307113)
+
+[node name="Sketchfab_Scene8" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.101772, -3, -1.1307113)
+
+[node name="Sketchfab_Scene2" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4, -3, -5)
+
+[node name="Sketchfab_Scene9" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4, -3, -2.3417504)
+
+[node name="Sketchfab_Scene18" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4, -3, 3.3221714)
+
+[node name="Sketchfab_Scene19" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.9409037, -3, 3.3221714)
+
+[node name="Sketchfab_Scene20" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.8980093, -3, 3.3221714)
+
+[node name="Sketchfab_Scene10" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.391452, -3, -3.8003252)
+
+[node name="Sketchfab_Scene11" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.0889263, -3, -1.6502807)
+
+[node name="Sketchfab_Scene12" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.9575367, -3, -1.6502807)
+
+[node name="Sketchfab_Scene21" parent="Scenery" instance=ExtResource("11_l8hgk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.9575367, -3, 0.3210237)
+
+[node name="Sketchfab_Scene3" parent="Scenery" instance=ExtResource("14_t6blv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, -4)
+
+[node name="Sketchfab_Scene13" parent="Scenery" instance=ExtResource("14_t6blv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.669079, -2, -8.736016)
+
+[node name="Sketchfab_Scene17" parent="Scenery" instance=ExtResource("14_t6blv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6903934, -2, 2.7607164)
+
+[node name="Sketchfab_Scene14" parent="Scenery" instance=ExtResource("14_t6blv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80983, -2, -8.736016)
+
+[node name="Sketchfab_Scene15" parent="Scenery" instance=ExtResource("13_67e8c")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -11.110164, 0, 0)
+
+[node name="Sketchfab_Scene16" parent="Scenery" instance=ExtResource("13_67e8c")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10.927785, 0, 0)
+
+[node name="Flock" type="Node3D" parent="."]
+script = ExtResource("14_l8hgk")
