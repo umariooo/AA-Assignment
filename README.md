@@ -49,9 +49,7 @@ These behaviours make Nyra's movement appear organic and lifelike.
 Sound reinforces Nyra's emotional states.
 
 - Ambient hum while drifting
-- Soft chirps when curious
 - Sharp pulse sounds when threatened
-- Rhythmic tones while sleeping
 
 Sound pitch and intensity change depending on Nyra's emotional state.
 
